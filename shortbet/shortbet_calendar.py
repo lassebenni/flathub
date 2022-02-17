@@ -46,7 +46,9 @@ class EarningsCalendar:
 
     def add_earnings_event(self, event: EarningsEvent):
         return self.calendar.add_event(
-            summary=event.summary, location=event.location, start_date=event.start_date,
+            summary=event.summary,
+            location=event.location,
+            start_date=event.start_date,
         )
 
     def delete_earnings_events(self):

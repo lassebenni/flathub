@@ -31,7 +31,9 @@ class NUHeadlinesCalendar(Calendar):
 
     def add_nu_headline_event(self, headline: NUHeadline):
         return self.calendar.add_event(
-            summary=headline.title, location=headline.url, start_date=headline.date,
+            summary=headline.title,
+            location=headline.url,
+            start_date=headline.date,
         )
 
     def delete_todays_headline(self):

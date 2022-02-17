@@ -88,7 +88,9 @@ class Calendar:
 
     def set_public_access(self):
         rule = {
-            "scope": {"type": "default",},
+            "scope": {
+                "type": "default",
+            },
             "role": "reader",
         }
 
