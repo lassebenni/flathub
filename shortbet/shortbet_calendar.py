@@ -1,8 +1,10 @@
 from time import sleep
 from dataclasses import dataclass
 from datetime import datetime
+from typing import List
 
 from gcalendar.gcalendar import Calendar
+from shortbet.shortbet_earnings import Ticker
 
 
 @dataclass
@@ -44,6 +46,10 @@ class EarningsCalendar:
 
         self.calendar.switch_calendar(earnings_calendar["id"])
 
+    def add_earnings_events(self, events: list[EarningsEvent]):
+        for event in events:
+            self.add_earnings_event(event)
+
     def add_earnings_event(self, event: EarningsEvent):
         return self.calendar.add_event(
             summary=event.summary,
@@ -57,3 +63,17 @@ class EarningsCalendar:
         for event in earnings_events:
             self.calendar.delete_event(event)
             sleep(5)
+
+    def tickers_to_events(self, tickers: List[Ticker]) -> List[EarningsEvent]:
+        events: List[EarningsEvent] = []
+
+        for ticker in tickers:
+            event = EarningsEvent(
+                location=ticker.url,
+                name=ticker.name,
+                short_float=ticker.short_float,
+                start_date=ticker.earnings_date,
+            )
+            events.append(event)
+
+        return events

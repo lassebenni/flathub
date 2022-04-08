@@ -1,9 +1,7 @@
-from time import sleep
-from dataclasses import dataclass
 from datetime import datetime
 
 from gcalendar.gcalendar import Calendar
-from nu_headlines.nu_headlines import NUHeadline
+from nu_headlines.nu_headlines import Headline
 
 CALENDAR_NAME = "NU.nl"
 
@@ -29,7 +27,7 @@ class NUHeadlinesCalendar(Calendar):
 
         self.calendar.switch_calendar(nu_calendar["id"])
 
-    def add_nu_headline_event(self, headline: NUHeadline):
+    def add_nu_headline_event(self, headline: Headline):
         return self.calendar.add_event(
             summary=headline.title,
             location=headline.url,
