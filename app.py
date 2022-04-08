@@ -3,11 +3,11 @@ import os
 from typing import List
 
 from gcalendar.gcalendar import Calendar
-from nu_headlines.nu_calendar import NUHeadlinesCalendar
-from nu_headlines.nu_headlines import Headline, NUHeadlines
-from shortbet.shortbet_calendar import EarningsCalendar
+from sources.nu_headlines.nu_calendar import NUHeadlinesCalendar
+from sources.nu_headlines.nu_headlines import Headline, NUHeadlines
+from sources.shortbet.shortbet_calendar import EarningsCalendar
 
-from shortbet.shortbet_earnings import ShortbetEarnings
+from sources.shortbet.shortbet_earnings import ShortbetEarnings
 
 from gsheets.sheets import GoogleSheet
 

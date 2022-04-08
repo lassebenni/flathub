@@ -1,7 +1,7 @@
 from datetime import datetime
 
 from gcalendar.gcalendar import Calendar
-from nu_headlines.nu_headlines import Headline
+from sources.nu_headlines.nu_headlines import Headline
 
 CALENDAR_NAME = "NU.nl"
 

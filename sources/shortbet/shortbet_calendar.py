@@ -4,7 +4,7 @@ from datetime import datetime
 from typing import List
 
 from gcalendar.gcalendar import Calendar
-from shortbet.shortbet_earnings import Ticker
+from sources.shortbet.shortbet_earnings import Ticker
 
 
 @dataclass
